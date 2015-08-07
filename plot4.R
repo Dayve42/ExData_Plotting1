@@ -6,11 +6,10 @@ colnames(usage)[1] <- "datetime"
 usage$Date <- strptime(paste(usage$Date, usage$Time), "%d/%m/%Y %H:%M:%S")
 colnames(usage)[1] <- "datetime"
 
-#set up for 4 plots
-par(mfcol = c(2,2))
-
 #make the plot
 png("plot4.png")
+#set up for 4 plots
+par(mfcol = c(2,2))
 #top left plot
 plot(usage$datetime, usage$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kiliwatts)")
 
